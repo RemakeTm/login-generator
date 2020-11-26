@@ -1,10 +1,11 @@
 package geco;
 
 import junit.framework.TestCase;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
 
-public class LoginGeneratorTest extends TestCase{
+import static org.junit.Assert.assertEquals;
+
+public class LoginGeneratorTest{
 
     LoginService loginService;
     LoginGenerator loginGenerator;
@@ -15,9 +16,13 @@ public class LoginGeneratorTest extends TestCase{
         loginGenerator = new LoginGenerator(loginService);
     }
     @Test
-    public void testMethode(){
+    public void CT1(){
         assertEquals("PDUR", loginGenerator.generateLoginForNomAndPrenom("Durand", "Paul"));
+    }
 
+    @Test
+    public void CT2(){
+        assertEquals("JRAL2", loginGenerator.generateLoginForNomAndPrenom("Ralling", "John"));
     }
 
 }
